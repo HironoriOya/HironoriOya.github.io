@@ -1,0 +1,71 @@
+body {
+	background-color: SeaGreen;
+	color: FloralWhite;
+	font-size: 115%;
+}
+
+.japeng {
+	position:absolute;
+	top:1%; right:1%;
+}
+
+a {
+	color: GreenYellow;
+}
+
+a:visited {
+	color: SkyBlue;
+}
+h1 {
+	padding-left: 3.5rem;
+	font-size: 210%
+}
+
+h2 {
+padding-left: 0.5rem;
+width: 75%;
+border-width: 0.4rem;
+
+border-bottom-style: double;
+border-color: Yellow;
+
+}
+
+h3 {
+padding-left: 0.5rem;
+width: 75%;
+border-width: 0.2rem;
+
+border-bottom-style: solid;
+border-color: Yellow;
+
+}
+
+
+
+p {
+
+padding-left: 2rem;
+
+}
+
+
+
+ol {
+padding-left: 3rem;
+
+}
+
+.right {
+	text-align: right;
+}
+
+.cv {
+	font-size: 100%;
+	border-spacing: 20px 0px;
+}
+
+.cv th {
+	vertical-align: top;
+	text-align: left;
+}

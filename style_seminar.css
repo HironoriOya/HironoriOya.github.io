@@ -1,0 +1,126 @@
+body {
+	background-color: aliceblue;
+	color: black;
+	font-size: 115%;
+}
+
+.japeng {
+	position:absolute;
+	top:1%; right:1%;
+}
+
+a {
+	color: midnightblue;
+}
+
+a:visited {
+	color: navy;
+}
+table, th, td {
+    border: none;
+}
+
+.table{
+    font-size: 105%;
+}
+h1 {
+	color: black;
+	background-color: rgba(253,245,230,0.7);
+	font-family:sans-serif;
+	text-align: center;
+	font-size: 210%
+}
+
+h2 {
+padding-left: 0.5rem;
+width: 75%;
+border-width: 0.2rem;
+text-align: center;
+border-bottom-style:ridge ;
+border-color: navy;
+
+}
+
+h3 {
+padding-left: 0.5rem;
+width: 75%;
+border-width: 0.2rem;
+text-align: center;
+border-bottom-style:ridge ;
+border-color: navy;
+
+}
+
+h4 {
+padding-left: 0.5rem;
+border-left-style:ridge ;
+border-color: navy;
+border-width: 0.2rem;
+}
+
+
+p {
+
+padding-left: 2rem;
+
+}
+
+
+
+ol {
+padding-left: 3rem;
+
+}
+
+.right {
+	text-align: right;
+}
+
+.cv {
+	font-size: 100%;
+	border-spacing: 20px 0px;
+}
+
+.cv th {
+	vertical-align: top;
+	text-align: left;
+}
+
+.wrapper{
+    width:100%;
+    background-image:url("picture/TokyoTech.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+.wrapper .container{
+    max-width:1000px;
+    margin:0px auto;
+    padding:80px 0px;
+}
+/* content */
+.wrapper .content .heading{
+    margin:0px 0px 40px 0px;
+    color:#ffffff;
+    font-size: 40px;
+    font-weight: normal;
+    text-align: center;
+}
+@media (min-width: 992px) {
+    .wrapper .content .list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.wrapper .content .list-item {
+    padding:30px;
+    line-height:2.8rem;
+    color:#ffffff;
+    text-align:center;
+}
+@media (min-width: 992px) {
+    .wrapper .content .list-item {
+        width:50%;
+    }
+}

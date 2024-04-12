@@ -1,0 +1,2 @@
+RewriteEngine on
+ RewriteRule ^TokyoTechreptheory.html$ https://www.math.titech.ac.jp/~reptheory_seminar/ [L,R=301]
