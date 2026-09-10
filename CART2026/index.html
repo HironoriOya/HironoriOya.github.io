@@ -68,27 +68,88 @@
 
         <article class="section" id="program">
           <h2>Program and Abstract</h2>
-                    <h3>Program</h3>
-          <!-- <object data="CART2026_program.pdf#view=FitH" type="application/pdf"
+          <!-- Upload the two PDF files alongside index.html using the filenames below. -->
+          <h3>Program</h3>
+          <!-- <div class="cart-pdf-viewer" id="cart-program-viewer">
+          <p><a href="CART2026_program.pdf" target="_blank" rel="noopener" class="cart-fullscreen">View full screen</a> &middot; <a href="CART2026_program.pdf" target="_blank" rel="noopener">Open in new tab</a> <button type="button" class="cart-exit-fullscreen" hidden>Exit full screen</button></p>
+          <object data="CART2026_program.pdf#view=FitH" type="application/pdf"
                   width="100%" height="600" aria-label="CART 2026 program PDF"
                   style="display: block; width: 100%; height: 65vh; min-height: 320px; border: 1px solid #ddd;">
             <p>The program is TBA. Once available, you can
               <a href="CART2026_program.pdf" target="_blank" rel="noopener">open the program PDF</a>
               if your browser cannot display it here.</p>
           </object>
+          </div>
           <p><a href="CART2026_program.pdf" download>Download program (PDF)</a></p> -->
           TBA
           <h3>Titles and Abstracts</h3>
+          <div class="cart-pdf-viewer" id="cart-abstracts-viewer">
+          <p><a href="CART2026_abstracts.pdf" target="_blank" rel="noopener" class="cart-fullscreen">View full screen</a> &middot; <a href="CART2026_abstracts.pdf" target="_blank" rel="noopener">Open in new tab</a> <button type="button" class="cart-exit-fullscreen" hidden>Exit full screen</button></p>
           <object data="CART2026_abstracts.pdf#view=FitH" type="application/pdf"
                   width="100%" height="600" aria-label="CART 2026 titles and abstracts PDF"
-                  style="display: block; width: 100%; height: 40vh; min-height: 320px; border: 1px solid #ddd;">
+                  style="display: block; width: 100%; height: 65vh; min-height: 320px; border: 1px solid #ddd;">
             <p>The titles and abstracts are TBA. Once available, you can
               <a href="CART2026_abstracts.pdf" target="_blank" rel="noopener">open the abstracts PDF</a>
               if your browser cannot display it here.</p>
           </object>
+          </div>
           <p><a href="CART2026_abstracts.pdf" download>Download titles and abstracts (PDF)</a></p>
+          <style>
+            #program .cart-pdf-viewer:fullscreen {
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: 100%;
+              padding: 12px;
+              background: #fff;
+              overflow: auto;
+            }
+            #program .cart-pdf-viewer:fullscreen > p { margin: 0 0 10px; }
+            #program .cart-pdf-viewer:fullscreen object {
+              flex: 1;
+              height: 100% !important;
+              min-height: 0 !important;
+              box-sizing: border-box;
+            }
+          </style>
+          <p class="cart-fullscreen-status" role="status"></p>
+          <script>
+            (() => {
+              const section = document.getElementById('program');
+              const status = section.querySelector('.cart-fullscreen-status');
+              section.querySelectorAll('.cart-pdf-viewer').forEach(viewer => {
+                const enter = viewer.querySelector('.cart-fullscreen');
+                const exit = viewer.querySelector('.cart-exit-fullscreen');
+                enter.addEventListener('click', async event => {
+                  if (!document.fullscreenEnabled || !viewer.requestFullscreen) return;
+                  event.preventDefault();
+                  try {
+                    await viewer.requestFullscreen();
+                    status.textContent = '';
+                    exit.focus();
+                  } catch {
+                    status.textContent = 'Full screen is unavailable. Please use Open in new tab.';
+                  }
+                });
+                exit.addEventListener('click', async () => {
+                  if (document.fullscreenElement === viewer) {
+                    try { await document.exitFullscreen(); }
+                    catch { status.textContent = 'Press Esc to exit full screen.'; }
+                  }
+                });
+                document.addEventListener('fullscreenchange', () => {
+                  const active = document.fullscreenElement === viewer;
+                  const wasActive = !exit.hidden;
+                  exit.hidden = !active;
+                  enter.hidden = active;
+                  if (wasActive && !active) enter.focus();
+                });
+              });
+            })();
+          </script>
         </article>
-      </section>
+        </section>
 
       <div class="section-rule"></div>
 
